@@ -14,4 +14,8 @@ def detectar_cerrado ( evento ):
         pygame.quit()
         sys.exit()
 
-
+def detectar_pausa ( evento, pause ):
+    if evento.type == pygame.KEYDOWN:
+        if evento.key == pygame.K_SPACE:
+            return not pause
+    return pause
