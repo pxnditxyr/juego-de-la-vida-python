@@ -6,12 +6,12 @@ from time import sleep
 
 import copy
 
-from generar_reglas import generar_regla_0, generar_regla_24
+from generar_reglas import generar_regla_0, generar_regla_24, generar_regla_34, generar_regla_1
 
 pygame.init()
 
-FILAS_MATRIZ = 20
-COLUMNAS_MATRIZ = 40
+FILAS_MATRIZ = 16
+COLUMNAS_MATRIZ = 25
 
 ANCHO_PANTALLA = 1200
 ALTO_PANTALLA = 600
@@ -86,7 +86,7 @@ def aplicar_reglas ( matriz ):
 
 
 def main ():
-    matriz = generar_regla_24( FILAS_MATRIZ, COLUMNAS_MATRIZ )
+    matriz = generar_regla_1( FILAS_MATRIZ, COLUMNAS_MATRIZ )
 
     pantalla = pygame.display.set_mode( ( ANCHO_PANTALLA, ALTO_PANTALLA ) )
     pygame.display.set_caption( 'Juego de la vida' )
