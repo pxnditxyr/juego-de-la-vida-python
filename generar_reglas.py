@@ -7,7 +7,6 @@ def generar_regla_0 ( filas_matriz : int, columnas_matriz : int ):
 
 def generar_regla_24 ( filas_matriz : int, columnas_matriz : int ):
     matriz = generar_matriz( filas_matriz, columnas_matriz )
-
     for i in range( filas_matriz ):
         for j in range( columnas_matriz ):
             if i - j == -( columnas_matriz // 2 ):
@@ -16,7 +15,6 @@ def generar_regla_24 ( filas_matriz : int, columnas_matriz : int ):
 
 def generar_regla_34(filas_matriz: int, columnas_matriz:int):
     matriz =generar_matriz(filas_matriz, columnas_matriz )
-
     for i in range( filas_matriz):
         for j in range( columnas_matriz):
             if i+j==columnas_matriz//2:
@@ -49,4 +47,23 @@ def generar_regla_11 ( filas_matriz : int, columnas_matriz : int ):
                 if j < pibote or j > pibote + 1:
                     matriz[ i ][ j ] = 1
         pibote += 1
+    return matriz
+
+def generar_regla_15(filas_matriz : int, columnas_matriz : int ):
+    matriz = generar_matriz( filas_matriz, columnas_matriz )
+    mitad_matriz = ( columnas_matriz - 1 )//2 if columnas_matriz%2 == 0 else columnas_matriz//2
+    matriz[0][mitad_matriz] = 1
+    #matriz[2][mitad_matriz+1] = 1
+    cont = 0
+
+    for i in range(filas_matriz):
+        for j in range(columnas_matriz):
+            if i % 2 != 0:
+                cont += 2
+                if (i + j) != (mitad_matriz+1):
+                    matriz[i][j] = 1
+                else:
+                    matriz[i][j] = 0
+                # if i+j != i+j+2:
+                #     matriz[i][j] = 1
     return matriz
